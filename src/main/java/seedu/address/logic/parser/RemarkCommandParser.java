@@ -6,11 +6,12 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_REMARK;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.RemarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Remark;
 
-public class RemarkCommandParser {
+public class RemarkCommandParser implements Parser<RemarkCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the RemarkCommand
      * and returns a RemarkCommand object for execution.
