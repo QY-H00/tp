@@ -10,15 +10,14 @@ import seedu.address.logic.commands.RemarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Remark;
 
-/**
- * Parses input arguments and creates a new DeleteCommand object
- */
-public class RemarkCommandParser implements Parser<RemarkCommand> {
-
+public class RemarkCommandParser {
     /**
-     * Parses the given {@code String} of arguments in the context of the DeleteCommand
-     * and returns a DeleteCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     * Parses the given {@code String} of arguments in the context of the RemarkCommand
+     * and returns a RemarkCommand object for execution.
+     *
+     * @param args The arguments.
+     * @return New RemarkCommand object.
+     * @throws ParseException If user input does not conform to expected format.
      */
     public RemarkCommand parse(String args) throws ParseException {
         requireNonNull(args);
@@ -33,10 +32,8 @@ public class RemarkCommandParser implements Parser<RemarkCommand> {
                     RemarkCommand.MESSAGE_USAGE), ive);
         }
 
-        String remark = argMultimap.getValue(PREFIX_REMARK).orElse("");
+        Remark remark = new Remark(argMultimap.getValue(PREFIX_REMARK).orElse(""));
 
-        return new RemarkCommand(index, new Remark(remark));
+        return new RemarkCommand(index, remark);
     }
-
 }
-

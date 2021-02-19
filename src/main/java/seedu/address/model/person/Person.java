@@ -19,10 +19,10 @@ public class Person {
     private final Name name;
     private final Phone phone;
     private final Email email;
+    private final Remark remark;
 
     // Data fields
     private final Address address;
-    private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
 
     /**
